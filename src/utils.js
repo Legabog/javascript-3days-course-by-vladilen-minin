@@ -9,3 +9,8 @@ export function col(content, styles = "") {
 export function image(content, styles = "", alt) {
   return `<img src=${content} style="${styles}" alt=${alt}/>`;
 }
+
+export function css(styles = {}) {
+  const toString = key => `${key}: ${styles[key]}`
+  return Object.keys(styles).map(toString).join(";")
+}
